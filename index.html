@@ -31,6 +31,7 @@
             min-width: 100%;
             min-height: 100%;
             object-fit: cover;
+            -o-object-fit: cover; /* SỬA LỖI NỀN KHÔNG MÉO (THÊM TIỀN TỐ) */
             z-index: -2;
         }
 
@@ -276,6 +277,13 @@
 
         /* Responsive cho Mobile */
         @media (max-width: 868px) {
+            /* SỬA LỖI NỀN KÍNH KHÔNG MÉO/HỎNG ĐỒ HỌA TRÊN MOBILE */
+            .glass-panel {
+                backdrop-filter: blur(6px) !important; /* Giảm độ mờ xuống 6px và dùng !important để ghi đè */
+                -webkit-backdrop-filter: blur(6px) !important;
+                background: rgba(0, 0, 0, 0.3) !important; /* Thêm màu nền tối nhẹ để đảm bảo độ tương phản */
+            }
+
             .main-wrapper {
                 flex-direction: column;
                 padding: 15px;
@@ -367,13 +375,11 @@
 <body>
 
     <button id="fullscreen-toggle" class="glass-panel fullscreen-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
     </button>
 
-    <video autoplay muted loop playsinline class="video-background">
-        <source src="eren-and-mikasa-last-memories-attack-on-titan-moewalls-com.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline poster="avatar.jpg" class="video-background">
+        <source src="0703.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
 
@@ -457,21 +463,21 @@
             <div id="contact" class="page-content">
                 <h2>Get In Touch</h2>
                 <p>Contact me if you want anything, or simply if you're looking for someone to talk to.</p>
-                
-                <div class="contact-grid">
-                    <a href="mailto:your-email@example.com" class="contact-card">
-                        <h3>📧 Email</h3>
-                        <p>your-email@example.com</p>
+             
+		<div class="contact-grid">
+   		    <a href="https://mail.google.com/" class="contact-card">
+      			<h3>📧 Email</h3>
+    		        <p>buihainam9a@gmail.com</p>
                     </a>
-                    <a href="https://github.com" target="_blank" class="contact-card">
+                    <a href="https://github.com/Hainam11227" target="_blank" class="contact-card">
                         <h3>💻 GitHub</h3>
-                        <p>@yourgithub</p>
+                        <p>@Hainam11227</p>
                     </a>
-                    <a href="https://facebook.com" target="_blank" class="contact-card">
+                    <a href="https://www.facebook.com/hai.nam.306970/" target="_blank" class="contact-card">
                         <h3>🌐 Facebook</h3>
                         <p>Connect with me</p>
                     </a>
-                </div>
+               </div>
             </div>
 
         </div>
